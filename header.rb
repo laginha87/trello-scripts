@@ -20,3 +20,8 @@ def put(path)
     `curl --request PUT \
     --url 'https://api.trello.com/1/#{URI.escape(path)}#{AUTH}'`
 end
+
+def simple_delete(path)
+    `curl --request DELETE \
+    --url 'https://api.trello.com/1/#{path}#{AUTH}'`
+end
