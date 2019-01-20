@@ -25,3 +25,13 @@ def simple_delete(path)
     `curl --request DELETE \
     --url 'https://api.trello.com/1/#{path}#{AUTH}'`
 end
+
+
+def get_labels(board_id)
+    get "boards/#{board_id}/labels?cards=none&card_fields=all&filter=open&fields=all"
+end
+
+
+def get_lists(board_id)
+    get "boards/#{board_id}/lists?cards=none&card_fields=all&filter=open&fields=all"
+end

@@ -1,7 +1,14 @@
 load "./header.rb"
 
-list_id = ARGV[0]
-label_id = ARGV[1]
+board_id = ARGV[0]
+list_name = ARGV[1]
+label_name = ARGV[2]
+
+lists = get_lists(board_id)
+labels = get_labels(board_id)
+
+list_id = lists.find{|e| e["name"] == list_name }["id"]
+label_id = labels.find{|e| e["name"] == label_name }["id"]
 
 cards = get "lists/#{list_id}/cards?fields=id"
 
