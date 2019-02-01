@@ -4,6 +4,14 @@ board_id = ARGV[0]
 list_name = ARGV[1]
 label_name = ARGV[2]
 
+USAGE = "USAGE: remove_from_list board_id list_name label_name"
+
+
+if board_id.nil? || list_name.nil? || label_name.nil?
+    print(USAGE)
+    exit
+end
+
 lists = get_lists(board_id)
 labels = get_labels(board_id)
 
